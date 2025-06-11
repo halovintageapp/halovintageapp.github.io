@@ -63,7 +63,7 @@ Bem-vindo ao aplicativo HaloVintage. Ao utilizar nosso aplicativo, você concord
     <ol>
         <li>Estes Termos constituem o acordo integral entre você e o HaloVintage em relação ao uso do aplicativo, substituindo quaisquer acordos anteriores ou contemporâneos.</li>
         <li>Caso qualquer disposição destes Termos seja considerada inválida ou inexequível por um tribunal competente, as demais disposições permanecerão em pleno vigor e efeito.</li>
-        <li>Estes Termos serão regidos pelas leis da legislação brasileira. Qualquer disputa decorrente ou relacionada a estes Termos será submetida à jurisdição exclusiva dos tribunais da cidade de Curitiba, Paraná.</li>.
+        <li>Estes Termos serão regidos pelas leis da legislação brasileira. Qualquer disputa decorrente ou relacionada a estes Termos será submetida à jurisdição exclusiva dos tribunais da cidade de Curitiba, Paraná.</li>
     </ol>
 </ol>
 
