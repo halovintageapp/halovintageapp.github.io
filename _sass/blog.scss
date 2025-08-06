@@ -1,0 +1,92 @@
+/* Estilo do Card */
+.post-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    padding: 0px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.post-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-title {
+  color: #222;
+  text-align: left !important;
+}
+
+.post-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-card a * {
+    text-decoration: none !important;
+}
+
+.post-meta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.post-category,
+.post-date {
+  color: #797979;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.post-excerpt {
+  color: #333;
+  margin-bottom: 16px;
+  line-height: 1.5em;
+  max-height: 4.5em;
+  overflow: hidden;
+}
+
+.post-tags {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 1.2rem;
+  color: #85480b;
+}
+
+.post-tags span {
+  white-space: nowrap;
+}
+
+/* Contêiner geral do post */
+.page-post .post-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Título do post */
+/* Título principal do post */
+.page-post .post-title {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center !important;
+}
+
+/* Títulos dentro do conteúdo (h2, h3, etc.) */
+.page-post .post-content h1,
+.page-post .post-content h2,
+.page-post .post-content h3,
+.page-post .post-content h4 {
+	padding-top: 16px;
+	padding-bottom: 12px;
+}
