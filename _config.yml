@@ -109,3 +109,10 @@ collections:
 
 # Markdown rendering
 markdown: kramdown
+
+plugins:
+  - jekyll-multiple-languages-plugin
+
+# o18y
+languages: ["pt", "en"]
+default_lang: "pt"
