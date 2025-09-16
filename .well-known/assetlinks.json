@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "br.com.halovintage",
+      "sha256_cert_fingerprints": [
+        "59:7C:D7:87:E8:76:74:A7:AF:B3:DC:E2:14:7E:9A:76:91:37:88:E6:50:68:AF:79:58:FD:0F:16:F4:A0:53:A8"
+      ]
+    }
+  }
+]
