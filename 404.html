@@ -4,8 +4,9 @@ permalink: /404.html
 sitemap: false
 ---
 
-<meta http-equiv="refresh" content="0; url={{ '/' | relative_url }}" />
+{% assign home_url = '/' | absolute_url %}
+<meta http-equiv="refresh" content="0; url={{ home_url }}" />
 <script>
-  window.location.replace('{{ '/' | relative_url }}');
+  window.location.replace('{{ home_url }}');
 </script>
-<p>If you are not redirected automatically, <a href="{{ '/' | relative_url }}">go back to the homepage</a>.</p>
+<p>If you are not redirected automatically, <a href="{{ home_url }}">go back to the homepage</a>.</p>
