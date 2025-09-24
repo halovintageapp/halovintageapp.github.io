@@ -51,10 +51,12 @@
                             </p>
                         </div>
                         <div class="downloadButtonsContainer">
+                            {% assign playstore_badge = 'assets/playstore.png' | relative_url %}
+                            {% assign appstore_badge = 'assets/appstore.png' | relative_url %}
                             {% if site.playstore_link %}
-                                <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="assets/playstore.png"></a>
+                                <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="{{ playstore_badge }}"></a>
                             {% endif %}
-                            <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="assets/appstore.png"></a>
+                            <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="{{ appstore_badge }}"></a>
                         </div>
                     </div>
                     {% include features.html %}
