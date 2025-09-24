@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "post title"
-date: 2025-08-05
+date: 2024-08-05
 categories: [blog]
 comments: true
 lang: en

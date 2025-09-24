@@ -2,7 +2,7 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="{{ site.lang | default: "en" }}">
 
     {% include head.html %}
 
@@ -17,7 +17,10 @@
 
                     <!-- Categoria e Data -->
                     <div class="post-meta">
-                        <span class="post-category">{{ page.category | truncate: 25}}</span>
+                        {% if page.categories %}
+                        {% assign categories_text = page.categories | join: ", " %}
+                        <span class="post-category">{{ categories_text }}</span>
+                        {% endif %}
                         <span class="post-date">
                         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
                         </span>

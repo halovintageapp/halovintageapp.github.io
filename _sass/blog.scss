@@ -1,3 +1,19 @@
+.blog-lang-nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.blog-lang-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #85480b;
+}
+
+.blog-lang-nav a.active {
+  text-decoration: underline;
+}
+
 /* Estilo do Card */
 .post-card {
     background: #fff;
