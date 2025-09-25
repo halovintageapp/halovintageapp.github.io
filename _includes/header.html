@@ -2,9 +2,9 @@
   <div class="header-container">
     <div class="header-left">
       {% if site.lang == site.default_lang %}
-      {% capture home_href %}{{ '/' | relative_url }}{% endcapture %}
+      {% assign home_href = '/' %}
       {% else %}
-      {% capture home_href %}{{ site.baseurl_root | append: '/' | append: site.lang | append: '/' | relative_url }}{% endcapture %}
+      {% assign home_href = '/' | append: site.lang | append: '/' %}
       {% endif %}
       <div class="logo">
         <svg width="0" height="0">
@@ -35,32 +35,33 @@
           {% assign all_posts = site.collections['posts'].docs %}
           {% assign candidate_posts = all_posts | where: 'translation_key', page.translation_key | where: 'lang', target_lang %}
           {% if candidate_posts.size > 0 %}
-            {% capture target_url %}{{ candidate_posts[0].url | relative_url }}{% endcapture %}
+            {% capture target_url %}{{ candidate_posts[0].url }}{% endcapture %}
           {% endif %}
         {% endif %}
 
         {% if target_url == '' %}
           {% if site.lang == site.default_lang %}
-            {% if is_post %}
-              {% capture target_url %}{{ '/en/blog/' | relative_url }}{% endcapture %}
+            {% if page.url == '/' %}
+              {% assign target_url = '/en/' %}
             {% else %}
-              {% capture target_url %}{{ page.url | prepend: '/en' | relative_url }}{% endcapture %}
+              {% assign target_url = '/en' | append: page.url %}
             {% endif %}
           {% else %}
-            {% if is_post %}
-              {% capture target_url %}{{ '/blog/' | relative_url }}{% endcapture %}
-            {% else %}
-              {% capture target_url %}{{ page.url | remove_first: '/en' | relative_url }}{% endcapture %}
+            {% assign target_url = page.url | replace_first: '/en/', '/' %}
+            {% if target_url == '' %}
+              {% assign target_url = '/' %}
             {% endif %}
           {% endif %}
         {% endif %}
 
+        {% assign target_url = target_url | replace: '//', '/' %}
+
         {% if site.lang == 'pt' %}
-          <a href="{{ target_url | strip }}" title="English">
+          <a href="{{ target_url }}" title="English">
             <img src="{{ '/assets/flags/us.svg' | relative_url }}" alt="English" class="flag-icon">
           </a>
         {% elsif site.lang == 'en' %}
-          <a href="{{ target_url | strip }}" title="Português">
+          <a href="{{ target_url }}" title="Português">
             <img src="{{ '/assets/flags/br.svg' | relative_url }}" alt="Português" class="flag-icon">
           </a>
         {% endif %}
