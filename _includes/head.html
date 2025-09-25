@@ -4,7 +4,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title class="pageTitle">{{ site.page_title }}</title>
-	<meta name="description" content="{{ site.app_description }}">
+	{% assign meta_description = site.app_description[site.lang] | default: site.app_description[site.default_lang] | default: site.app_description %}
+	<meta name="description" content="{{ meta_description }}">
 
 	<link rel="shortcut icon" href="{{ site.app_icon | relative_url }}">
 

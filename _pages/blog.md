@@ -3,6 +3,9 @@ layout: blog
 title: Blog
 permalink: /blog/
 include_in_header: true
+nav_title:
+  pt: Blog
+  en: Blog
 ---
 
 {% assign localized_posts = site.posts | where: 'lang', site.lang %}

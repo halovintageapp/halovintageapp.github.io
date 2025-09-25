@@ -1,6 +1,13 @@
 <footer>
 	{% if site.your_name %}
-	<p class="footerText">Made by {% if site.your_link %}<a href="{{ site.your_link }}">{% endif %}{{ site.your_name }}{% if site.your_link %}</a>{% endif %}{% if site.your_city %} in {{ site.your_city }}{% endif %}</p>
+	{% if site.lang == 'en' %}
+	{% assign footer_made_by = site.footer_text.made_by.en | default: 'Made by' %}
+	{% assign footer_located_in = site.footer_text.located_in.en | default: 'in' %}
+{% else %}
+	{% assign footer_made_by = site.footer_text.made_by.pt | default: 'Feito por' %}
+	{% assign footer_located_in = site.footer_text.located_in.pt | default: 'em' %}
+{% endif %}
+	<p class="footerText">{{ footer_made_by }} {% if site.your_link %}<a href="{{ site.your_link }}">{% endif %}{{ site.your_name }}{% if site.your_link %}</a>{% endif %}{% if site.your_city %} {{ footer_located_in }} {{ site.your_city }}{% endif %}</p>
 	{% endif %}
 	<div class="footerIcons">
 
@@ -78,11 +85,12 @@
 
 	</div>
 	<div class="footerLinks">
-		{% for page in site.pages %}
-			<a href="{{ page.url | relative_url }}" target="_self">{{ page.title }}</a>
+		{% for nav_page in site.pages %}
+			{% assign link_title = nav_page.nav_title[site.lang] | default: nav_page.nav_title[site.default_lang] | default: nav_page.title %}
+			<a href="{{ nav_page.url | relative_url }}" target="_self">{{ link_title }}</a>
 		{% endfor %}
 		{% if site.presskit_download_link %}
-			<a href="{{ site.presskit_download_link }}">Press Kit</a>
+			<a href="{{ site.presskit_download_link }}">{% if site.lang == 'en' %}{{ site.footer_text.press_kit.en | default: 'Press Kit' }}{% else %}{{ site.footer_text.press_kit.pt | default: 'Kit de imprensa' }}{% endif %}</a>
 		{% endif %}
 	</div>
 </footer>

@@ -2,6 +2,9 @@
 layout: page
 title: Politica de Privacidade
 include_in_header: false
+nav_title:
+  pt: Política de Privacidade
+  en: Privacy Policy
 ---
 
 Política de Privacidade do Aplicativo HaloVintage

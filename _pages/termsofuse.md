@@ -2,6 +2,9 @@
 layout: page
 title: Termos de Uso
 include_in_header: false
+nav_title:
+  pt: Termos de Uso
+  en: Terms of Use
 ---
 
 Termos de Uso do Aplicativo HaloVintage

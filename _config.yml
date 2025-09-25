@@ -14,7 +14,9 @@ presskit_download_link                    :                                     
 app_icon                                  : # assets/appicon.png                      # Automatically populates if not set and if iOS app ID is set.  Otherwise enter path to icon file manually.
 app_name                                  :                                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
 app_price                                 :                                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_description                           : O mundo do som vintage na palma da sua mão.
+app_description:
+  pt: O mundo do som vintage na palma da sua mão.
+  en: The world of vintage sound at your fingertips.
 
 enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
 
@@ -33,31 +35,66 @@ youtube_username                          :
 mastodon_link                             : 
 
 # Feature List                            Edit, add or remove features to be presented.
-features                                  :
+features:
+  - title:
+      pt: Encontre equipamentos de som vintage com facilidade
+      en: Find vintage audio gear with ease
+    description:
+      pt: Navegue por marcas, categorias e décadas para descobrir aparelhos clássicos com riqueza de detalhes.
+      en: Browse by brand, category, and decade to discover classic devices packed with detail.
+    fontawesome_icon_name: search
 
-  - title                                 : Encontre equipamentos de som vintage com facilidade
-    description                           : Navegue por marcas, categorias e décadas para descobrir aparelhos clássicos com riqueza de detalhes.
-    fontawesome_icon_name                 : search
+  - title:
+      pt: Catálogo técnico completo
+      en: Comprehensive technical catalog
+    description:
+      pt: Acesse especificações, modelos relacionados e informações históricas de equipamentos anteriores aos anos 90.
+      en: Access specifications, related models, and historical insights for equipment built before the 1990s.
+    fontawesome_icon_name: book
 
-  - title                                 : Catálogo técnico completo
-    description                           : Acesse especificações, modelos relacionados e informações históricas de equipamentos anteriores aos anos 90.
-    fontawesome_icon_name                 : book
+  - title:
+      pt: Design retrô com tecnologia moderna
+      en: Retro design with modern tech
+    description:
+      pt: Interface elegante e intuitiva, inspirada na estética vintage, mas com performance atual.
+      en: Enjoy an elegant, intuitive interface inspired by vintage aesthetics yet powered by modern performance.
+    fontawesome_icon_name: palette
 
-  - title                                 : Design retrô com tecnologia moderna
-    description                           : Interface elegante e intuitiva, inspirada na estética vintage, mas com performance atual.
-    fontawesome_icon_name                 : palette
+  - title:
+      pt: Atualizações frequentes
+      en: Frequent updates
+    description:
+      pt: Novos modelos e marcas adicionados constantemente para manter o acervo sempre em crescimento.
+      en: New models and brands are added regularly to keep the collection growing.
+    fontawesome_icon_name: sync
 
-  - title                                 : Atualizações frequentes
-    description                           : Novos modelos e marcas adicionados constantemente para manter o acervo sempre em crescimento.
-    fontawesome_icon_name                 : sync
+  - title:
+      pt: Referência para restauração e pesquisa
+      en: Reference for restoration and research
+    description:
+      pt: Uma fonte confiável para colecionadores, técnicos e apaixonados por áudio vintage.
+      en: A trusted source for collectors, technicians, and vintage audio enthusiasts alike.
+    fontawesome_icon_name: tools
 
-  - title                                 : Referência para restauração e pesquisa
-    description                           : Uma fonte confiável para colecionadores, técnicos e apaixonados por áudio vintage.
-    fontawesome_icon_name                 : tools
+  - title:
+      pt: Feito por entusiastas, para entusiastas
+      en: Made by enthusiasts, for enthusiasts
+    description:
+      pt: Criado com cuidado por quem ama som analógico — ideal para preservar a história do áudio.
+      en: Crafted by people who love analog sound—perfect for preserving audio history.
+    fontawesome_icon_name: heart
 
-  - title                                 : Feito por entusiastas, para entusiastas
-    description                           : Criado com cuidado por quem ama som analógico — ideal para preservar a história do áudio.
-    fontawesome_icon_name                 : heart
+
+footer_text:
+  made_by:
+    pt: Feito por
+    en: Made by
+  located_in:
+    pt: em
+    en: in
+  press_kit:
+    pt: Kit de imprensa
+    en: Press Kit
 
 # Theme Settings
 topbar_color                              : "#ffe3b2"

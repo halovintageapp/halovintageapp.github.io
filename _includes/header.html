@@ -39,7 +39,7 @@
 				{% endif %}
 			{% endfor %}
 			{% if site.presskit_download_link %}
-				<li><a href="{{ site.presskit_download_link }}">Press Kit</a></li>
+				<li><a href="{{ site.presskit_download_link }}">{% if site.lang == 'en' %}{{ site.footer_text.press_kit.en | default: 'Press Kit' }}{% else %}{{ site.footer_text.press_kit.pt | default: 'Kit de imprensa' }}{% endif %}</a></li>
 			{% endif %}
 		</ul>
 	</nav>
@@ -97,13 +97,14 @@
       </div>
 	 <nav class="menu">
 	  <ul>
-      	{% for page in site.pages %}
-			{% if page.include_in_header == true %}
-				<li><a href="{{ page.url | relative_url }}" target="_self">{{ page.title }}</a></li>
+      	{% for nav_page in site.pages %}
+			{% if nav_page.include_in_header == true %}
+				{% assign nav_label = nav_page.nav_title[site.lang] | default: nav_page.nav_title[site.default_lang] | default: nav_page.title %}
+				<li><a href="{{ nav_page.url | relative_url }}" target="_self">{{ nav_label }}</a></li>
 			{% endif %}
 			{% endfor %}
 			{% if site.presskit_download_link %}
-				<li><a href="{{ site.presskit_download_link }}">Press Kit</a></li>
+				<li><a href="{{ site.presskit_download_link }}">{% if site.lang == 'en' %}{{ site.footer_text.press_kit.en | default: 'Press Kit' }}{% else %}{{ site.footer_text.press_kit.pt | default: 'Kit de imprensa' }}{% endif %}</a></li>
 			{% endif %}
 		</ul>
 		</nav>

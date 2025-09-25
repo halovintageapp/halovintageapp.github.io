@@ -46,8 +46,9 @@
                             </h2>
                         </div>
                         <div class="appDescriptionContainer">
+                            {% assign app_description = site.app_description[site.lang] | default: site.app_description[site.default_lang] | default: site.app_description %}
                             <p class ="appDescription">
-                                {{ site.app_description }}
+                                {{ app_description }}
                             </p>
                         </div>
                         <div class="downloadButtonsContainer">

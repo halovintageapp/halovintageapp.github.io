@@ -11,11 +11,13 @@
             </span>
         </div>
         <div class="featureText">
+            {% assign feature_title = feature.title[site.lang] | default: feature.title[site.default_lang] | default: feature.title %}
             <h3>
-                {{ feature.title }}
+                {{ feature_title }}
             </h3>
+            {% assign feature_description = feature.description[site.lang] | default: feature.description[site.default_lang] | default: feature.description %}
             <p>
-                {{ feature.description }}
+                {{ feature_description }}
             </p>
         </div>
     </div>
