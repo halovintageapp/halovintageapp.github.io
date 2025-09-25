@@ -38,5 +38,9 @@ nav_title:
 </div>
 {% endfor %}
 {% else %}
-<p>{{ 'posts.no_posts' | t }}</p>
+{% if site.lang == 'en' %}
+<p>Please wait—the posts are being prepared and will appear here soon.</p>
+{% else %}
+<p>Aguarde, os posts estão sendo preparados e aparecerão aqui em breve.</p>
+{% endif %}
 {% endif %}
