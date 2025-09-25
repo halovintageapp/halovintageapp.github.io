@@ -74,22 +74,43 @@
           {% assign is_post = true %}
         {% endif %}
 
-        {% if site.lang == "pt" %}
-          {% if is_post %}
-            {% assign target_url = site.baseurl_root | append: '/en/blog/' %}
-          {% else %}
-            {% assign target_url = site.baseurl_root | append: '/en' | append: page.url %}
+        {% if site.lang == 'pt' %}
+          {% assign target_lang = 'en' %}
+        {% else %}
+          {% assign target_lang = 'pt' %}
+        {% endif %}
+
+        {% assign target_url = '' %}
+        {% if is_post and page.translation_key %}
+          {% assign all_posts = site.collections['posts'].docs %}
+          {% assign candidate_posts = all_posts | where: 'translation_key', page.translation_key | where: 'lang', target_lang %}
+          {% if candidate_posts.size > 0 %}
+            {% assign target_url = candidate_posts[0].url | relative_url %}
           {% endif %}
+        {% endif %}
+
+        {% if target_url == '' %}
+          {% if site.lang == 'pt' %}
+            {% if is_post %}
+              {% assign target_url = site.baseurl_root | append: '/en/blog/' %}
+            {% else %}
+              {% assign target_url = site.baseurl_root | append: '/en' | append: page.url %}
+            {% endif %}
+          {% else %}
+            {% if is_post %}
+              {% assign target_url = site.baseurl_root | append: '/blog/' %}
+            {% else %}
+              {% assign cleaned_url = page.url | replace_first: '/en/', '/' %}
+              {% assign target_url = site.baseurl_root | append: cleaned_url %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+
+        {% if site.lang == 'pt' %}
           <a href="{{ target_url }}" title="English">
             <img src="{{ site.baseurl }}/assets/flags/us.svg" alt="English" class="flag-icon">
           </a>
-        {% elsif site.lang == "en" %}
-          {% if is_post %}
-            {% assign target_url = site.baseurl_root | append: '/blog/' %}
-          {% else %}
-            {% assign cleaned_url = page.url | replace_first: '/en/', '/' %}
-            {% assign target_url = site.baseurl_root | append: cleaned_url %}
-          {% endif %}
+        {% elsif site.lang == 'en' %}
           <a href="{{ target_url }}" title="Português">
             <img src="{{ site.baseurl }}/assets/flags/br.svg" alt="Português" class="flag-icon">
           </a>
