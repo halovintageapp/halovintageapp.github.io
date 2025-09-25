@@ -48,10 +48,10 @@
 <header class="site-header">
   <div class="header-container">
     <div class="header-left">
-      {% if site.lang == 'en' %}
-      {% assign home_href = '/en/' %}
+      {% if site.lang == site.default_lang %}
+      {% assign home_href = site.baseurl_root | append: '/' %}
       {% else %}
-      {% assign home_href = '/' %}
+      {% assign home_href = site.baseurl_root | append: '/' | append: site.lang | append: '/' %}
       {% endif %}
       <div class="logo">
         <svg width="0" height="0">
@@ -61,7 +61,7 @@
             </clipPath>
           </defs>
         </svg>
-        <a class="logo-link" href="{{ home_href | relative_url }}" title="{{ site.app_name }}" target="_self">
+        <a class="logo-link" href="{{ home_href }}" title="{{ site.app_name }}" target="_self">
           <img class="headerIcon" src="{{ site.app_icon | relative_url }}" alt="Logo">
         </a>
       </div>
