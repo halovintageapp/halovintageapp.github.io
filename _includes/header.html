@@ -42,15 +42,15 @@
         {% if target_url == '' %}
           {% if site.lang == site.default_lang %}
             {% if is_post %}
-              {% capture target_url %}{{ site.baseurl_root | append: '/en/blog/' | relative_url }}{% endcapture %}
+              {% capture target_url %}{{ '/en/blog/' | relative_url }}{% endcapture %}
             {% else %}
-              {% capture target_url %}{{ site.baseurl_root | append: '/en' | append: page.url | relative_url }}{% endcapture %}
+              {% capture target_url %}{{ page.url | prepend: '/en' | relative_url }}{% endcapture %}
             {% endif %}
           {% else %}
             {% if is_post %}
-              {% capture target_url %}{{ site.baseurl_root | append: '/blog/' | relative_url }}{% endcapture %}
+              {% capture target_url %}{{ '/blog/' | relative_url }}{% endcapture %}
             {% else %}
-              {% capture target_url %}{{ site.baseurl_root | append: (page.url | replace_first: '/en/', '/') | relative_url }}{% endcapture %}
+              {% capture target_url %}{{ page.url | remove_first: '/en' | relative_url }}{% endcapture %}
             {% endif %}
           {% endif %}
         {% endif %}
