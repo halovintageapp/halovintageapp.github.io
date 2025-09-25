@@ -1,32 +1,134 @@
-<header>
+<!-- <header>
 	<div class="logo">
 		<div class="appIconShadow">
 			<svg width="0" height="0">
 				<defs>
 					<clipPath id="shape">
-							<path id="shape" class="cls-1" d="M6181.23,233.709v-1.792c0-.5-0.02-1-0.02-1.523a24.257,24.257,0,0,0-.28-3.3,11.207,11.207,0,0,0-1.04-3.132,10.683,10.683,0,0,0-1.95-2.679,10.384,10.384,0,0,0-2.68-1.943,10.806,10.806,0,0,0-3.13-1.038,19.588,19.588,0,0,0-3.3-.285c-0.5-.017-1-0.017-1.52-0.017h-22.39c-0.51,0-1.01.017-1.53,0.017a24.041,24.041,0,0,0-3.3.285,11.009,11.009,0,0,0-3.13,1.038,10.491,10.491,0,0,0-4.62,4.622,10.893,10.893,0,0,0-1.04,3.132,19.2,19.2,0,0,0-.28,3.3c-0.02.5-.02,1-0.02,1.523v22.392c0,0.5.02,1,.02,1.524a24.257,24.257,0,0,0,.28,3.3,10.9,10.9,0,0,0,1.04,3.132,10.491,10.491,0,0,0,4.62,4.622,11.04,11.04,0,0,0,3.13,1.038,19.891,19.891,0,0,0,3.3.285c0.51,0.017,1.01.017,1.53,0.017h22.39c0.5,0,1-.017,1.52-0.017a24.221,24.221,0,0,0,3.3-.285,10.836,10.836,0,0,0,3.13-1.038,10.408,10.408,0,0,0,2.68-1.943,10.683,10.683,0,0,0,1.95-2.679,11.217,11.217,0,0,0,1.04-3.132,20.257,20.257,0,0,0,.28-3.3c0.02-.5.02-1,0.02-1.524v-20.6h0Z" transform="translate(-6131 -218)"/>
-					</clipPath>
-				</defs>
-			</svg>
-			{% if page.url != '/' %}
-				<a href="../" target="_self"><img class="headerIcon" src="{{ site.app_icon | relative_url }}"></a>
-			{% else %}
-				<img class="headerIcon" src="{{ site.app_icon | relative_url }}">
-			{% endif %}
-			<div class="divider"></div>
-		</div>
-		<p class="headerName">{{ site.app_name }}</p>
+						<path id="shape" class="cls-1" d="M6181.23,233.709v-1.792c0-.5-0.02-1-0.02-1.523a24.257,24.257,0,0,0-.28-3.3,11.207,11.207,0,0,0-1.04-3.132,10.683,10.683,0,0,0-1.95-2.679,10.384,10.384,0,0,0-2.68-1.943,10.806,10.806,0,0,0-3.13-1.038,19.588,19.588,0,0,0-3.3-.285c-0.5-.017-1-0.017-1.52-0.017h-22.39c-0.51,0-1.01.017-1.53,0.017a24.041,24.041,0,0,0-3.3.285,11.009,11.009,0,0,0-3.13,1.038,10.491,10.491,0,0,0-4.62,4.622,10.893,10.893,0,0,0-1.04,3.132,19.2,19.2,0,0,0-.28,3.3c-0.02.5-.02,1-0.02,1.523v22.392c0,0.5.02,1,.02,1.524a24.257,24.257,0,0,0,.28,3.3,10.9,10.9,0,0,0,1.04,3.132,10.491,10.491,0,0,0,4.62,4.622,11.04,11.04,0,0,0,3.13,1.038,19.891,19.891,0,0,0,3.3.285c0.51,0.017,1.01.017,1.53,0.017h22.39c0.5,0,1-.017,1.52-0.017a24.221,24.221,0,0,0,3.3-.285,10.836,10.836,0,0,0,3.13-1.038,10.408,10.408,0,0,0,2.68-1.943,10.683,10.683,0,0,0,1.95-2.679,11.217,11.217,0,0,0,1.04-3.132,20.257,20.257,0,0,0,.28-3.3c0.02-.5.02-1,0.02-1.524v-20.6h0Z" transform="translate(-6131 -218)"/>
+				</clipPath>
+			</defs>
+		</svg>
+		{% if page.url != '/' %}
+			<a href="/" target="_self"><img class="headerIcon" src="{{ site.app_icon | relative_url }}"></a>
+		{% else %}
+			<img class="headerIcon" src="{{ site.app_icon | relative_url }}">
+		{% endif %}
+		<div class="divider"></div>
+	</div>
+	<p class="headerName">{{ site.app_name }}</p>
 	</div>
 	<nav class="scroll">
 		<ul>
+			{% if site.lang == "pt" %}
+				{% capture link1 %}{{ site.baseurl_root }}/en{{ page.url}}{% endcapture %}
+				<li><a href="{{ link1 }}" class="lang-btn {% if site.lang == 'en' %}active{% endif %}">
+					<img src="{{ site.baseurl }}/assets/flags/us.svg" alt="English" class="flag-icon">
+				</a></li>
+				{% elsif site.lang == "en" %}
+				{% capture link2 %}{{ site.baseurl_root }}{{ page.url }}{% endcapture %}
+				<li><a href="{{ link2 }}" class="lang-btn {% if site.lang == 'pt' %}active{% endif %}">
+					<img src="{{ site.baseurl }}/assets/flags/br.svg" alt="Português" class="flag-icon">
+				</a></li>
+			{% endif %}
+			
+
+
 			{% for page in site.pages %}
 				{% if page.include_in_header == true %}
 				<li><a href="{{ page.url | relative_url }}" target="_self">{{ page.title }}</a></li>
 				{% endif %}
 			{% endfor %}
 			{% if site.presskit_download_link %}
-				<li><a href="{{ site.presskit_download_link }}">Press Kit</a></li>
+				<li><a href="{{ site.presskit_download_link }}">{% if site.lang == 'en' %}{{ site.footer_text.press_kit.en | default: 'Press Kit' }}{% else %}{{ site.footer_text.press_kit.pt | default: 'Kit de imprensa' }}{% endif %}</a></li>
 			{% endif %}
 		</ul>
 	</nav>
+</header> -->
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="header-left">
+      {% if site.lang == site.default_lang %}
+      {% assign home_href = site.baseurl_root | append: '/' %}
+      {% else %}
+      {% assign home_href = site.baseurl_root | append: '/' | append: site.lang | append: '/' %}
+      {% endif %}
+      <div class="logo">
+        <svg width="0" height="0">
+          <defs>
+            <clipPath id="shape">
+              <path id="shape" class="cls-1" d="M6181.23,233.709v-1.792c0-.5-0.02-1-0.02-1.523a24.257,24.257,0,0,0-.28-3.3,11.207,11.207,0,0,0-1.04-3.132,10.683,10.683,0,0,0-1.95-2.679,10.384,10.384,0,0,0-2.68-1.943,10.806,10.806,0,0,0-3.13-1.038,19.588,19.588,0,0,0-3.3-.285c-0.5-.017-1-0.017-1.52-0.017h-22.39c-0.51,0-1.01.017-1.53,0.017a24.041,24.041,0,0,0-3.3.285,11.009,11.009,0,0,0-3.13,1.038,10.491,10.491,0,0,0-4.62,4.622,10.893,10.893,0,0,0-1.04,3.132,19.2,19.2,0,0,0-.28,3.3c-0.02.5-.02,1-0.02,1.523v22.392c0,0.5.02,1,.02,1.524a24.257,24.257,0,0,0,.28,3.3,10.9,10.9,0,0,0,1.04,3.132,10.491,10.491,0,0,0,4.62,4.622,11.04,11.04,0,0,0,3.13,1.038,19.891,19.891,0,0,0,3.3.285c0.51,0.017,1.01.017,1.53,0.017h22.39c0.5,0,1-.017,1.52-0.017a24.221,24.221,0,0,0,3.3-.285,10.836,10.836,0,0,0,3.13-1.038,10.408,10.408,0,0,0,2.68-1.943,10.683,10.683,0,0,0,1.95-2.679,11.217,11.217,0,0,0,1.04-3.132,20.257,20.257,0,0,0,.28-3.3c0.02-.5.02-1,0.02-1.524v-20.6h0Z" transform="translate(-6131 -218)"/>
+            </clipPath>
+          </defs>
+        </svg>
+        <a class="logo-link" href="{{ home_href }}" title="{{ site.app_name }}" target="_self">
+          <img class="headerIcon" src="{{ site.app_icon | relative_url }}" alt="Logo">
+        </a>
+      </div>
+      <span class="site-title">{{ site.app_name }}</span>
+    </div>
+    <div class="header-right">
+      <div class="language-switch">
+        {% assign is_post = false %}
+        {% if page.collection == 'posts' or page.layout == 'post' %}
+          {% assign is_post = true %}
+        {% endif %}
+
+        {% if site.lang == 'pt' %}
+          {% assign target_lang = 'en' %}
+        {% else %}
+          {% assign target_lang = 'pt' %}
+        {% endif %}
+
+        {% assign target_url = '' %}
+        {% if is_post and page.translation_key %}
+          {% assign all_posts = site.collections['posts'].docs %}
+          {% assign candidate_posts = all_posts | where: 'translation_key', page.translation_key | where: 'lang', target_lang %}
+          {% if candidate_posts.size > 0 %}
+            {% assign target_url = candidate_posts[0].url | relative_url %}
+          {% endif %}
+        {% endif %}
+
+        {% if target_url == '' %}
+          {% if site.lang == 'pt' %}
+            {% if is_post %}
+              {% assign target_url = site.baseurl_root | append: '/en/blog/' %}
+            {% else %}
+              {% assign target_url = site.baseurl_root | append: '/en' | append: page.url %}
+            {% endif %}
+          {% else %}
+            {% if is_post %}
+              {% assign target_url = site.baseurl_root | append: '/blog/' %}
+            {% else %}
+              {% assign cleaned_url = page.url | replace_first: '/en/', '/' %}
+              {% assign target_url = site.baseurl_root | append: cleaned_url %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+
+        {% if site.lang == 'pt' %}
+          <a href="{{ target_url }}" title="English">
+            <img src="{{ site.baseurl }}/assets/flags/us.svg" alt="English" class="flag-icon">
+          </a>
+        {% elsif site.lang == 'en' %}
+          <a href="{{ target_url }}" title="Português">
+            <img src="{{ site.baseurl }}/assets/flags/br.svg" alt="Português" class="flag-icon">
+          </a>
+        {% endif %}
+      </div>
+	 <nav class="menu">
+	  <ul>
+      	{% for nav_page in site.pages %}
+			{% if nav_page.include_in_header == true %}
+				{% assign nav_label = nav_page.nav_title[site.lang] | default: nav_page.nav_title[site.default_lang] | default: nav_page.title %}
+				<li><a href="{{ nav_page.url | relative_url }}" target="_self">{{ nav_label }}</a></li>
+			{% endif %}
+			{% endfor %}
+			{% if site.presskit_download_link %}
+				<li><a href="{{ site.presskit_download_link }}">{% if site.lang == 'en' %}{{ site.footer_text.press_kit.en | default: 'Press Kit' }}{% else %}{{ site.footer_text.press_kit.pt | default: 'Kit de imprensa' }}{% endif %}</a></li>
+			{% endif %}
+		</ul>
+		</nav>
+    </div>
+  </div>
 </header>

@@ -1,0 +1,46 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en" }}">
+
+    {% include head.html %}
+
+    <body class="subPageBody">
+        <div class="headerBackground subPageHeaderBackground">
+            <div class="container subPageContainer">
+            {% include header.html %}
+                <article class="page markdown-body">
+
+                    <!-- Título do Post -->
+                    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+
+                    <!-- Categoria e Data -->
+                    <div class="post-meta">
+                        {% if page.categories %}
+                        {% assign categories_text = page.categories | join: ", " %}
+                        <span class="post-category">{{ categories_text }}</span>
+                        {% endif %}
+                        <span class="post-date">
+                        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+                        </span>
+                    </div>
+
+                    <br/>
+
+                    <!-- Conteúdo do Post -->
+                    <!-- DEBUG lang: {{ page.lang }} translation_key: {{ page.translation_key }} site.lang: {{ site.lang }} -->
+                    <div class="post-content" itemprop="articleBody">
+                        {{ content }}
+                    </div>
+                </article>
+            </div>
+            
+            {% include appstoreimages.html %}
+
+            <div class="comments">
+                {% include disqus.html %}
+            </div>
+        </div>
+    </body>
+</html>
