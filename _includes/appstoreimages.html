@@ -12,7 +12,6 @@ $(function() {
 
         if (json.results && json.results.length) {
 
-            console.info("Image strings loaded from Apple API.");
             var appInfo = json.results[0];
 
             // Set favicon
@@ -60,7 +59,6 @@ $(function() {
                 $($appStoreLink).attr("href", appInfo.trackViewUrl);
             }
 
-            console.info(appInfo);
 
         }
     });  
