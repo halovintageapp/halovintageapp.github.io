@@ -244,10 +244,9 @@ nav > ul li a:active {
 
 
 // Sub Page Header Styling
-.subPageHeaderBackground .logo > p {
+.subPageHeaderBackground .site-title {
 	color: #000;
 }
-
 .subPageHeaderBackground nav > ul li a:link,
 .subPageHeaderBackground nav > ul li a:visited {
 	color: rgba(#000, 0.6);
@@ -785,6 +784,9 @@ footer {
 .site-title {
   font-size: 1.2rem;
   font-weight: bold;
+  color: $header-title-color;
+  text-decoration: none;
+  margin-left: 15px;
 }
 
 .header-right {
