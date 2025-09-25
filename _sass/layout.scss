@@ -1,4 +1,4 @@
-.imageWrapper {					// Sets the background image in the header area
+.imageWrapper {				// Sets the background image in the header area
 	height: 714px;
 	background: 
 		linear-gradient(
@@ -12,8 +12,8 @@
 	background-size: cover;
 	background-position: top;
 	border-radius: 0px 0px 40px 40px;
-
 }
+
 
 .headerBackground {
 	height: 115px;
@@ -31,6 +31,14 @@
 .subPageHeaderBackground {
 	background-color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+	.imageWrapper {
+		height: 560px;
+		border-radius: 0 0 32px 32px;
+	}
+}
+
 
 .container {					// Set up the container for the site content
 	display: grid;
@@ -200,6 +208,18 @@ nav > ul li {
 
 }
 
+@media only screen and (max-width: 540px) {
+	.menu ul {
+		flex-wrap: wrap;
+		row-gap: 12px;
+		justify-content: flex-start;
+	}
+
+	.menu ul li {
+		padding-left: 15px;
+	}
+}
+
 nav > ul li:first-child {
 	padding-left: 0px;
 	padding-left: 15px;
@@ -211,6 +231,7 @@ nav > ul li:last-child {
 
 nav > ul li a:link,
 nav > ul li a:visited {
+
 	text-decoration: none;
 	color: rgba($header-title-color, 0.6);
 }
@@ -346,6 +367,29 @@ nav > ul li a:active {
 	
 } 
 
+@media only screen and (max-width: 600px) {
+	.appInfo {
+		padding-top: 32px;
+	}
+
+	.downloadButtonsContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+		margin-top: 32px;
+	}
+
+	.downloadButtonsContainer a {
+		margin: 0 !important;
+	}
+
+	.playStore,
+	.appStore {
+		height: 64px;
+	}
+}
+
 .playStore {
 	height: 75px;
 	margin-right: 24px;
@@ -469,6 +513,27 @@ nav > ul li a:active {
 
 
 // Feature List
+
+@media only screen and (max-width: 600px) {
+	.iphonePreview {
+		background-size: 220px auto;
+		padding-bottom: 48px;
+	}
+
+	.iphoneScreen,
+	.videoContainer {
+		width: 220px;
+		height: auto;
+		margin: 0;
+		margin-top: 18px;
+	}
+
+	.videoContainer > video {
+		width: 220px;
+		height: auto;
+	}
+}
+
 
 .features {
 	grid-area: c;
@@ -637,6 +702,17 @@ footer {
 	margin-right: 30px;
 }
 
+
+@media only screen and (max-width: 540px) {
+	.footerLinks {
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.footerLinks a {
+		margin-right: 0;
+	}
+}
 .footerLinks a:last-child {
 	margin-right: 0px;
 }
