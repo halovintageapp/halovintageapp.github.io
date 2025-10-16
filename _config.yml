@@ -2,6 +2,8 @@
 page_title                                :                                           # Automatically populates with app name if not set and if iOS app ID is set. Otherwise enter manually.
 url                                        : https://halovintageapp.github.io
 
+permalink                                  : /:year/:month/:day/:title/
+
 # App Info
 ios_app_id                                : 6741214523                                # Required. Enter iOS app ID to automatically populate name, price and icons (e.g. 718043190).
 ios_app_country                           : br                                        # Required outside USA. Enter 2 letter country code as in https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
